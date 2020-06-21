@@ -14,14 +14,16 @@ class MealPlannerForm extends Component {
   render() {
     const { didCompute } = this.props;
     return (
-      <form onSubmit={this.props.handleSubmit(this.props.submit)}>
-        <MealPlannerMyInfoFormSection />
-        <MealPlannerMyProfileFormSection />
+      <>
+        <form onSubmit={this.props.handleSubmit(this.props.submit)}>
+          <MealPlannerMyInfoFormSection />
+          <MealPlannerMyProfileFormSection />
+          <Button variant="contained" color="primary" type="submit" id="submit">
+            Submit
+          </Button>
+        </form>
         {didCompute && <MealPlannerResults />}
-        <Button variant="contained" color="primary" type="submit">
-          Submit
-        </Button>
-      </form>
+      </>
     );
   }
 }
