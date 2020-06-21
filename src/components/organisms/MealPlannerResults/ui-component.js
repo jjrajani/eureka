@@ -1,6 +1,7 @@
 import React from "react";
-
 import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
+import generatePDF from "../../../utils/generatePDF";
 
 /**
  * MealPlannerResults
@@ -22,6 +23,13 @@ const MealPlannerResults = ({ results }) => {
       <p>Macro Protien: {results.macro.protien}</p>
       <p>Macro Carbs: {results.macro.carbs}</p>
       <p>Macro Fats: {results.macro.fats}</p>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={generatePDF.bind(this, results)}
+      >
+        Download
+      </Button>
     </div>
   );
 };
