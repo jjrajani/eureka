@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
-import generatePDF from "../../../utils/generatePDF";
 
 /**
  * MealPlannerResults
@@ -9,6 +7,13 @@ import generatePDF from "../../../utils/generatePDF";
  */
 
 const MealPlannerResults = ({ results }) => {
+  const openPDF = () => {
+    const win = window.open(
+      "https://docs.google.com/document/d/e/2PACX-1vStOq78LpK9MlfAtoZRcXCJ22wzHp8M8v-JnQsjnWD8iXZigKyqw8u0hwmMH8zD4INOIQ_hheQjMF5t/pub",
+      "_blnk"
+    );
+    win.focus();
+  };
   return (
     <div className="">
       <p>BMI Standard: {results.bmi.standard}</p>
@@ -23,13 +28,9 @@ const MealPlannerResults = ({ results }) => {
       <p>Macro Protien: {results.macro.protien}</p>
       <p>Macro Carbs: {results.macro.carbs}</p>
       <p>Macro Fats: {results.macro.fats}</p>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={generatePDF.bind(this, results)}
-      >
+      <button target="_blank" rel="noopener noreferrer" onClick={openPDF}>
         Download
-      </Button>
+      </button>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-import MyExpansionPanel from "../../molecules/MyExpansionPanel";
-import Grid from "@material-ui/core/Grid";
+// import MyExpansionPanel from "../../molecules/MyExpansionPanel";
+// import Grid from "@material-ui/core/Grid";
 import ReduxField from "../ReduxField";
 import INPUTS from "./inputs";
 // import ./style.scss
@@ -17,13 +17,7 @@ class MealPlannerMyInfoFormSection extends React.Component {
 
   render() {
     return (
-      <div className={"MealPlannerMyInfoFormSection"}>
-        <MyExpansionPanel title="About Me">
-          <Grid container spacing={3}>
-            {this.state.inputs}
-          </Grid>
-        </MyExpansionPanel>
-      </div>
+      <div className={"MealPlannerMyInfoFormSection"}>{this.state.inputs}</div>
     );
   }
 }

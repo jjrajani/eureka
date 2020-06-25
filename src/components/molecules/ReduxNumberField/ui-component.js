@@ -1,18 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextField from "@material-ui/core/TextField";
+// import TextField from "@material-ui/core/TextField";
 /**
  * ReduxNumberField
  * @param {ReduxNumberFieldProps} props
  */
-const ReduxNumberField = ({ inputProps, mdProps, field }) => {
+const ReduxNumberField = ({ inputProps, field }) => {
   return (
-    <TextField
+    <input
       {...field.input}
       {...inputProps}
-      inputProps={mdProps}
-      name={field.input.name}
       type="number"
+      placeholder={inputProps.label}
     />
   );
 };
@@ -23,7 +22,7 @@ const ReduxNumberField = ({ inputProps, mdProps, field }) => {
 ReduxNumberField.defaultProps = {};
 ReduxNumberField.propTypes = {
   inputProps: PropTypes.object,
-  mdProps: PropTypes.object,
+  // mdProps: PropTypes.object,
   field: PropTypes.object,
 };
 

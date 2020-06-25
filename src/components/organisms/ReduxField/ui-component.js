@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+// import Paper from "@material-ui/core/Paper";
+// import Grid from "@material-ui/core/Grid";
 import ReduxNumberField from "../../molecules/ReduxNumberField";
 import ReduxTextField from "../../molecules/ReduxTextField";
 import ReduxSelectField from "../../molecules/ReduxSelectField";
-// import ./style.scss
+import "./style.scss";
 import { Field } from "redux-form";
 
 const renderField = ({ inputProps, mdProps, options }, field) => {
@@ -39,13 +39,7 @@ const renderField = ({ inputProps, mdProps, options }, field) => {
 
 const renderFields = (inputs) =>
   inputs.map((input) => {
-    return (
-      <Grid key={input.inputProps.name} item xs={input.width}>
-        <Paper className="">
-          <ReduxField input={input} />
-        </Paper>
-      </Grid>
-    );
+    return <ReduxField key={input.inputProps.name} input={input} />;
   });
 
 /**
@@ -82,5 +76,6 @@ ReduxField.propTypes = {
 ReduxField.Text = ReduxTextField;
 ReduxField.Number = ReduxNumberField;
 ReduxField.Select = ReduxSelectField;
+ReduxField.renderField = renderField;
 ReduxField.renderFields = renderFields;
 export default ReduxField;

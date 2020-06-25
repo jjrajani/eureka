@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TextField from "@material-ui/core/TextField";
+// import TextField from "@material-ui/core/TextField";
 
 /**
  * ReduxTextField
  * @param {ReduxTextFieldProps} props
  */
 const ReduxTextField = ({ inputProps, field }) => (
-  <TextField
+  <input
     {...field.input}
     {...inputProps}
-    name={field.input.name}
     type="text"
+    placeholder={inputProps.label}
   />
 );
 /**
