@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import PDF from "../../../assets/protein_5_carbs_6_fats_7_water_10.pdf";
 
 /**
  * MealPlannerResults
@@ -8,10 +9,7 @@ import PropTypes from "prop-types";
 
 const MealPlannerResults = ({ results }) => {
   const openPDF = () => {
-    const win = window.open(
-      "https://docs.google.com/document/d/e/2PACX-1vStOq78LpK9MlfAtoZRcXCJ22wzHp8M8v-JnQsjnWD8iXZigKyqw8u0hwmMH8zD4INOIQ_hheQjMF5t/pub",
-      "_blnk"
-    );
+    const win = window.open(PDF, "_blank");
     win.focus();
   };
   return (

@@ -164,7 +164,7 @@ const INPUTS = [
       type: "number",
       id: "water",
       labelId: "water-label",
-      label: "Water",
+      label: "Water (8oz glasses)",
       variant: "outlined",
     },
     mdProps: {
