@@ -1,22 +1,22 @@
 const MacroRatioCalculator = (goal) => {
-  let protien, carbs, fats;
+  let protein, carbs, fats;
 
   if (goal === "weight-loss") {
-    protien = 30;
+    protein = 30;
     carbs = 25;
     fats = 45;
   } else if (goal === "improve-health") {
-    protien = 30;
+    protein = 30;
     carbs = 40;
     fats = 30;
   } else if (goal === "body-recomp") {
-    protien = 45;
+    protein = 45;
     carbs = 25;
     fats = 30;
   }
 
   return {
-    protien,
+    protein,
     carbs,
     fats,
   };

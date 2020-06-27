@@ -12,6 +12,7 @@ const ReduxNumberField = ({ inputProps, field }) => {
       {...inputProps}
       type="number"
       placeholder={inputProps.label}
+      className={field.meta.touched && field.meta.error ? "error" : ""}
     />
   );
 };

@@ -21,47 +21,12 @@ const mifflinCalc = ({ age, gender, height, weight }) => {
   return BMR.toFixed(0);
 };
 
-const harrisCalc = ({ age, gender, height, weight }) => {
-  // Men	BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) + 5
-  // Women	BMR = (10 × weight in kg) + (6.25 × height in cm) - (5 × age in years) - 161
-  age = parseInt(age);
-  height = inToCm(parseInt(height));
-  weight = lbsToKg(parseInt(weight));
-
-  let BMR;
-
-  if (gender === "male") {
-    weight = weight * 13.397;
-    height = height * 4.799;
-    age = age * 5.677;
-
-    BMR = weight + height - age + 88.362;
-  } else {
-    weight = weight * 9.247;
-    height = height * 3.098;
-    age = age * 4.33;
-
-    BMR = weight + height - age + 447.593;
-  }
-
-  return BMR.toFixed(0);
-};
-// const katchCalc = () => {
-//     // not sure we can do this with the user input provided, need to be able to calculate body fat percentage
-// };
-
 const BMRCalculator = ({ age, gender, feet, inches, weight }) => {
   let feetInInches = parseInt(feet) * 12;
   let height = feetInInches + parseInt(inches);
   let mifflin = mifflinCalc({ age, gender, height, weight });
-  let harris = harrisCalc({ age, gender, height, weight });
-  //   let katch = katchCalc();
 
-  return {
-    mifflin,
-    harris,
-    // katch,
-  };
+  return mifflin;
 };
 
 export default BMRCalculator;

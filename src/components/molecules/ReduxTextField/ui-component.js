@@ -12,6 +12,7 @@ const ReduxTextField = ({ inputProps, field }) => (
     {...inputProps}
     type="text"
     placeholder={inputProps.label}
+    className={field.meta.touched && field.meta.error ? "error" : ""}
   />
 );
 /**

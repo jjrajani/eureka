@@ -4,10 +4,7 @@ import { connect } from "react-redux";
 import { calculateResults } from "../../../actions/meal-planner";
 import withSizes from "react-sizes";
 import { isSV, isLV } from "../../../utils/window/sizes";
-
-// const validate = (vals) => {
-//   console.log("validate", vals);
-// };
+import validate from "./validate";
 
 const submit = (dispatch, vals) => {
   dispatch(calculateResults(vals));
@@ -16,15 +13,15 @@ const submit = (dispatch, vals) => {
 const mapStateToProps = (state) => ({
   ...state.mealPlanner,
   initialValues: {
-    activity: "",
-    age: "",
-    diet: "",
-    gender: "",
-    goal: "",
-    heightFt: "",
-    heightIn: "",
-    water: "",
-    weight: "",
+    activity: "low",
+    age: "23",
+    diet: "anything",
+    gender: "female",
+    goal: "weight-loss",
+    heightFt: "6",
+    heightIn: "6",
+    water: "6",
+    weight: "187",
   },
 });
 
@@ -44,6 +41,7 @@ export default connect(
   withSizes(mapSizesToProps)(
     reduxForm({
       form: "mealPlanner",
+      validate,
       // validate,
     })(MealPlannerForm)
   )

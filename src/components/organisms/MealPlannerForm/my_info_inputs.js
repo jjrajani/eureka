@@ -6,7 +6,6 @@ const INPUTS = [
       id: "age",
       labelId: "age-label",
       label: "Age",
-
       min: 0,
     },
     width: 3,
@@ -37,7 +36,6 @@ const INPUTS = [
       type: "number",
       id: "heightFt",
       label: "Height (ft)",
-
       min: "0",
       max: "7",
     },
@@ -49,7 +47,6 @@ const INPUTS = [
       type: "number",
       id: "heightIn",
       label: "Height (in)",
-
       min: "0",
       max: "11",
     },
@@ -61,7 +58,6 @@ const INPUTS = [
       type: "number",
       id: "weight",
       label: "Weight",
-
       min: "0",
     },
     width: 12,
@@ -165,10 +161,7 @@ const INPUTS = [
       id: "water",
       labelId: "water-label",
       label: "Water (8oz glasses)",
-      variant: "outlined",
-    },
-    mdProps: {
-      min: 0,
+      min: "0",
     },
     width: 3,
   },

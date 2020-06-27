@@ -11,35 +11,25 @@ const CalorieIntakeCalculator = ({
 }) => {
   let BMR = BMRCalculator({ age, gender, feet, inches, weight });
 
-  let BMRMifflin = parseInt(BMR.mifflin),
-    BMRHarris = parseInt(BMR.harris);
+  let bmr = parseInt(BMR);
 
-  let calorieIntakeMifflin = BMRMifflin,
-    calorieIntakeHarris = BMRHarris;
+  let calorieIntake = bmr;
 
   if (activity === "low") {
-    calorieIntakeMifflin *= 1.375;
-    calorieIntakeHarris *= 1.375;
+    calorieIntake *= 1.375;
   } else if (activity === "moderate") {
-    calorieIntakeMifflin *= 1.55;
-    calorieIntakeHarris *= 1.55;
+    calorieIntake *= 1.55;
   } else if (activity === "high") {
-    calorieIntakeMifflin *= 1.725;
-    calorieIntakeHarris *= 1.725;
+    calorieIntake *= 1.725;
   }
 
   if (goal === "weight-loss") {
-    calorieIntakeMifflin -= 500;
-    calorieIntakeHarris -= 500;
+    calorieIntake -= 500;
   } else if (goal === "body-recomp") {
-    calorieIntakeMifflin -= 250;
-    calorieIntakeHarris -= 250;
+    calorieIntake -= 250;
   }
 
-  return {
-    mifflin: calorieIntakeMifflin.toFixed(0),
-    harris: calorieIntakeHarris.toFixed(0),
-  };
+  return calorieIntake.toFixed(0);
 };
 
 export default CalorieIntakeCalculator;

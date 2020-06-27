@@ -3,6 +3,7 @@ import BMICalculator from "../utils/bmi_calculator";
 import BMRCalculator from "../utils/bmr_calculator";
 import CalorieIntakeCalculator from "../utils/calorie_intake_calculator";
 import MacroRatioCalculator from "../utils/macro_ratio_calculator";
+import HandServingSizeCalculator from "../utils/hand_serving_size_calculator";
 
 /**
  * Redux_MealPlannerState
@@ -29,7 +30,7 @@ export default (state = mealPlannerInitialState, action) => {
         IN: action.payload.heightIn,
       });
 
-      let BMR = BMRCalculator({
+      let bmr = BMRCalculator({
         age: action.payload.age,
         gender: action.payload.gender,
         feet: action.payload.heightFt,
@@ -47,21 +48,25 @@ export default (state = mealPlannerInitialState, action) => {
         weight: action.payload.weight,
       });
 
+      let macro = MacroRatioCalculator(action.payload.goal);
+
+      let handSizes = HandServingSizeCalculator({
+        calorieIntake,
+        macro,
+        weight: action.payload.weight,
+      });
+      console.log("handSizes", handSizes);
+
       return {
         ...state,
         didCompute: true,
         loading: false,
         results: {
           bmi,
-          bmr: {
-            mifflin: BMR.mifflin,
-            harris: BMR.harris,
-          },
-          calorieIntake: {
-            mifflin: calorieIntake.mifflin,
-            harris: calorieIntake.harris,
-          },
-          macro: MacroRatioCalculator(action.payload.goal),
+          bmr,
+          calorieIntake: calorieIntake,
+          macro,
+          handSizes,
         },
       };
     }

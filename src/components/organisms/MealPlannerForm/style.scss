@@ -1,12 +1,25 @@
 // all viewports
-.form-wrapper {
-  padding: 30px 0;
-  padding: 50px 0;
-  max-width: 1080px !important;
-  width: 80%;
-  margin: auto;
+.react-meal-planner {
+  .wrapper {
+    padding: 30px 0;
+    padding: 50px 0;
+    max-width: 1080px !important;
+    width: 80%;
+    margin: auto;
 
-  .row {
-    margin-bottom: 3%;
+    form {
+      display: flex;
+      flex-direction: column;
+
+
+      button[type="submit"] {
+        align-self: flex-end;
+      }
+    }
+
+    .row {
+      margin-bottom: 3%;
+    }
   }
+
 }

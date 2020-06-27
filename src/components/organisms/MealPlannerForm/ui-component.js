@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import MealPlannerResults from "../MealPlannerResults";
 import "./style.scss";
 import MY_INFO_INPUTS from "./my_info_inputs";
-import ReduxField from "../ReduxField";
+import ReduxField from "../../molecules/ReduxField";
 
 /**
  * [MealPlannerForm description]
@@ -35,7 +35,7 @@ class MealPlannerForm extends Component {
     const { didCompute } = this.props;
     return (
       <>
-        <div className="container form-wrapper">
+        <div className="container wrapper">
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
             <div className="row">
               <div className="col-12">{this.state.age}</div>
@@ -74,7 +74,7 @@ class MealPlannerForm extends Component {
     const { didCompute } = this.props;
     return (
       <>
-        <div className="container form-wrapper">
+        <div className="container wrapper">
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
             <div className="row">
               <div className="col-6">{this.state.age}</div>

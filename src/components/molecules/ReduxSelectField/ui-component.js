@@ -8,7 +8,11 @@ import PropTypes from "prop-types";
 const ReduxSelectField = ({ inputProps, field, options }) => {
   return (
     <div className="select-wrapper">
-      <select {...field.input} {...inputProps}>
+      <select
+        {...field.input}
+        {...inputProps}
+        className={field.meta.touched && field.meta.error ? "error" : ""}
+      >
         <option value="">{inputProps.label}</option>
         {options.map((o) => {
           return (
