@@ -36,7 +36,7 @@ class MealPlannerResults extends React.Component {
           </div>
           <div className="row justify-content-sm-center">
             <div className="col">
-              <p className="text-center mb-0">BMR Mifflin: {results.bmr}</p>
+              <p className="text-center mb-0">BMR: {results.bmr}</p>
             </div>
           </div>
           <div className="row justify-content-sm-center">
