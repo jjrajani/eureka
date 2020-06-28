@@ -1,7 +1,11 @@
-import Modal from "./ui-component";
+import EmailCollectionModal from "./ui-component";
 import { connect } from "react-redux";
 import { reduxForm } from "redux-form";
-import { emailCollectionFormSubmit } from "../../../actions/email-collection-form";
+import {
+  closeEmailCollectionModal,
+  dismissEmailCollectionForm,
+  emailCollectionFormSubmit,
+} from "../../../actions/email-collection-form";
 import validate from "./validate";
 
 const submit = (dispatch, vals, results) => {
@@ -13,6 +17,9 @@ const mapStateToProps = (state) => {
     opts: state.modal.showId ? state.modal[state.modal.showId] : {},
     show: state.modal.show,
     results: state.mealPlanner.results,
+    loading: state.emailCollectionForm.loading,
+    didSubscribe: state.emailCollectionForm.didSubscribe,
+    didDismiss: state.emailCollectionForm.didDismiss,
     initialValues: {
       first: "asdf",
       last: "asdf",
@@ -24,9 +31,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (vals, results) => submit(dispatch, vals, results),
-    skipSubscribe: () => {
-      window.$("#email-collection").modal("toggle");
-    },
+    skipSubscribe: () => closeEmailCollectionModal(),
+    dismiss: () => dispatch(dismissEmailCollectionForm()),
   };
 };
 
@@ -38,5 +44,5 @@ export default connect(
     form: "emailCollection",
     validate,
     // validate,
-  })(Modal)
+  })(EmailCollectionModal)
 );

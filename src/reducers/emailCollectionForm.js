@@ -9,7 +9,8 @@ import * as t from "../actions/email-collection-form/types";
 const mealPlannerInitialState = {
   PDF: false,
   loading: false,
-  didSubmit: {},
+  didSubscribe: false,
+  didDismiss: false,
 };
 
 export default (state = mealPlannerInitialState, action) => {
@@ -18,6 +19,21 @@ export default (state = mealPlannerInitialState, action) => {
       return {
         ...state,
         loading: true,
+      };
+    }
+
+    case t.EMAIL_COLLECTION_SUCCESS: {
+      return {
+        ...state,
+        loading: false,
+        didSubscribe: true,
+      };
+    }
+
+    case t.COMPLETE_EMAIL_COLLECTION: {
+      return {
+        ...state,
+        didDismiss: true,
       };
     }
     default:

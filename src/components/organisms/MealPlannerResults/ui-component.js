@@ -35,7 +35,7 @@ class MealPlannerResults extends React.Component {
   // };
 
   render() {
-    const { results } = this.props;
+    const { didDismiss, downloadResults, results } = this.props;
 
     return (
       <>
@@ -88,13 +88,23 @@ class MealPlannerResults extends React.Component {
           </div>
           <div className="row justify-content-sm-center">
             <div className="col text-center">
-              <button
-                type="button"
-                data-toggle="modal"
-                data-target="#email-collection"
-              >
-                Download
-              </button>
+              {!didDismiss && (
+                <button
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#email-collection"
+                >
+                  Download
+                </button>
+              )}
+              {didDismiss && (
+                <button
+                  type="button"
+                  onClick={downloadResults.bind(this, results)}
+                >
+                  Download
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -110,7 +120,8 @@ class MealPlannerResults extends React.Component {
 MealPlannerResults.defaultProps = {};
 MealPlannerResults.propTypes = {
   initModal: PropTypes.func.isRequired,
-  openEmailCollectionModal: PropTypes.func.isRequired,
+  didDismiss: PropTypes.bool.isRequired,
+  downloadResults: PropTypes.func.isRequired,
   results: PropTypes.object,
 };
 

@@ -4,8 +4,19 @@ import modifyAndOpenPDF from "../../utils/modifyAndOpenPDF";
 export const emailCollectionFormSubmit = (vals, results) => async (
   dispatch
 ) => {
-  const thing = await modifyAndOpenPDF(results);
-  // window.open(thing, "_blank");
+  dispatch({ type: t.EMAIL_COLLECTION_FORM_SUBMIT_START });
+  setTimeout(async () => {
+    await modifyAndOpenPDF(results);
 
-  // console.log("vals", vals);
+    dispatch({ type: t.EMAIL_COLLECTION_SUCCESS });
+  }, 1000);
+};
+
+export const closeEmailCollectionModal = () => {
+  window.$("#email-collection").modal("toggle");
+};
+
+export const dismissEmailCollectionForm = () => (dispatch) => {
+  closeEmailCollectionModal();
+  dispatch({ type: t.COMPLETE_EMAIL_COLLECTION });
 };
