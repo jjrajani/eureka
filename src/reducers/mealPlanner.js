@@ -55,7 +55,6 @@ export default (state = mealPlannerInitialState, action) => {
         macro,
         weight: action.payload.weight,
       });
-      console.log("handSizes", handSizes);
 
       return {
         ...state,

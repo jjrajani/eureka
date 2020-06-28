@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 import { calculateResults } from "../../../actions/meal-planner";
 import withSizes from "react-sizes";
 import { isSV, isLV } from "../../../utils/window/sizes";
+import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import validate from "./validate";
 
 const submit = (dispatch, vals) => {
   dispatch(calculateResults(vals));
+  scrollResultsIntoView();
 };
 
 const mapStateToProps = (state) => ({

@@ -95,8 +95,6 @@ class EmailCollectionModal extends React.Component {
     }
     let id = "email-collection";
     const { loading, didSubscribe } = this.props;
-    console.log("loading", loading);
-    console.log("didSubscribe", didSubscribe);
     const title = !didSubscribe
       ? "Lorem. Provide your email address get your personalized Meal Planner! Lorem."
       : "Lorem. Thank you for subscribing! Lorem.";

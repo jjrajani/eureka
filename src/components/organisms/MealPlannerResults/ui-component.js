@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import EmailCollectionForm from "../EmailCollectionForm";
-// import modifyAndOpenPDF from "../../../utils/modifyAndOpenPDF";
-// import PDF from "../../../assets/tracker.pdf";
+import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 
 /**
  * MealPlannerResults
@@ -11,8 +10,7 @@ import EmailCollectionForm from "../EmailCollectionForm";
 
 class MealPlannerResults extends React.Component {
   componentDidMount = () => {
-    let results = document.getElementById("react-results");
-    results.scrollIntoView(false);
+    scrollResultsIntoView();
 
     this.initEmailCollectionModal();
   };
@@ -23,16 +21,6 @@ class MealPlannerResults extends React.Component {
       body: <div>Email Collection Form</div>,
     });
   };
-
-  // openEmailCollectionModal = async () => {
-  // const thing = await modifyAndOpenPDF();
-  // const win = window.open(thing, "_blank");
-  //   // const win = window.open(
-  //   //   "https://docs.google.com/document/d/e/2PACX-1vStOq78LpK9MlfAtoZRcXCJ22wzHp8M8v-JnQsjnWD8iXZigKyqw8u0hwmMH8zD4INOIQ_hheQjMF5t/pub",
-  //   //   "_blank"
-  //   // );
-  // win.focus();
-  // };
 
   render() {
     const { didDismiss, downloadResults, results } = this.props;
