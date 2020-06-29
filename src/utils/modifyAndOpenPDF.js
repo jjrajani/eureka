@@ -177,8 +177,8 @@ const modifyAndOpenPDF = async (results) => {
   const file = new Blob([pdfBytes], { type: "application/pdf" });
   const fileUrl = URL.createObjectURL(file);
 
-  window.open(fileUrl, "_blank");
-  // downloadPDF(fileUrl);
+  // window.open(fileUrl, "_blank");
+  downloadPDF(fileUrl);
 };
 
 export default modifyAndOpenPDF;

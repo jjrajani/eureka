@@ -40,18 +40,14 @@ const FatServingsSizeCalculator = (calorieIntake, fatsPercent) => {
 };
 
 const WaterServingCalculator = (weight) => {
-  let weightInOz = weight * 16;
+  let waterIntake = weight / 2;
 
-  let waterIntake = weightInOz / 2;
   if (waterIntake > 100) {
     waterIntake = 100;
   }
   let glassesPerDay = waterIntake / 8;
-  if (glassesPerDay > 12) {
-    return 12;
-  } else {
-    return Math.round(glassesPerDay);
-  }
+
+  return Math.round(glassesPerDay);
 };
 
 const HandServingSizeCalculator = ({ calorieIntake, macro, weight }) => {

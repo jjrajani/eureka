@@ -27,7 +27,7 @@ class MealPlannerForm extends Component {
     if (this.props.isSV) {
       return this.renderSV();
     } else {
-      return this.renderLV();
+      return this.renderMV();
     }
   }
 
@@ -70,22 +70,20 @@ class MealPlannerForm extends Component {
     );
   };
 
-  renderLV = () => {
+  renderMV = () => {
     const { didCompute } = this.props;
     return (
       <>
         <div className="container wrapper">
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
             <div className="row">
-              <div className="col-6">{this.state.age}</div>
-              <div className="col-6">{this.state.gender}</div>
+              <div className="col-4">{this.state.age}</div>
+              <div className="col-4">{this.state.gender}</div>
+              <div className="col-4">{this.state.weight}</div>
             </div>
             <div className="row">
-              <div className="col-6">{this.state.heightFt}</div>
-              <div className="col-6">{this.state.heightIn}</div>
-            </div>
-            <div className="row">
-              <div className="col-6">{this.state.weight}</div>
+              <div className="col-3">{this.state.heightFt}</div>
+              <div className="col-3">{this.state.heightIn}</div>
               <div className="col-6">{this.state.water}</div>
             </div>
             <div className="row">
@@ -102,6 +100,37 @@ class MealPlannerForm extends Component {
       </>
     );
   };
+
+  // renderLV = () => {
+  //   const { didCompute } = this.props;
+  //   return (
+  //     <>
+  //       <div className="container wrapper">
+  //         <form onSubmit={this.props.handleSubmit(this.props.submit)}>
+  //           <div className="row">
+  //             <div className="col-4">{this.state.age}</div>
+  //             <div className="col-4">{this.state.gender}</div>
+  //             <div className="col-2">{this.state.heightFt}</div>
+  //             <div className="col-2">{this.state.heightIn}</div>
+  //           </div>
+  //           <div className="row">
+  //             <div className="col-6">{this.state.weight}</div>
+  //             <div className="col-6">{this.state.water}</div>
+  //           </div>
+  //           <div className="row">
+  //             <div className="col-4">{this.state.activity}</div>
+  //             <div className="col-4">{this.state.goal}</div>
+  //             <div className="col-4">{this.state.diet}</div>
+  //           </div>
+  //           <div className="row"></div>
+  //           <div className="row"></div>
+  //           <button type="submit">Submit</button>
+  //         </form>
+  //       </div>
+  //       {didCompute && <MealPlannerResults />}
+  //     </>
+  //   );
+  // };
 }
 
 MealPlannerForm.defaultProps = {};
@@ -116,6 +145,7 @@ MealPlannerForm.propTypes = {
   didCompute: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   isSV: PropTypes.bool.isRequired,
+  isLV: PropTypes.bool.isRequired,
   submit: PropTypes.func.isRequired,
 };
 

@@ -24,6 +24,15 @@ const mapStateToProps = (state) => ({
     heightIn: "6",
     water: "6",
     weight: "187",
+    // activity: "",
+    // age: "",
+    // diet: "",
+    // gender: "",
+    // goal: "",
+    // heightFt: "",
+    // heightIn: "",
+    // water: "",
+    // weight: "",
   },
 });
 

@@ -21,9 +21,12 @@ const mapStateToProps = (state) => {
     didSubscribe: state.emailCollectionForm.didSubscribe,
     didDismiss: state.emailCollectionForm.didDismiss,
     initialValues: {
-      first: "asdf",
-      last: "asdf",
-      email: "fdassdf@asdf.com",
+      // first: "asdf",
+      // last: "asdf",
+      // email: "fdassdf@asdf.com",
+      first: "",
+      last: "",
+      email: "",
     },
   };
 };
