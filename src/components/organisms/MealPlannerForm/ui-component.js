@@ -36,6 +36,11 @@ class MealPlannerForm extends Component {
     return (
       <>
         <div className="container wrapper">
+          <div className="text-center">
+            <h3>
+              <strong>My Info</strong>
+            </h3>
+          </div>
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
             <div className="row">
               <div className="col-12">{this.state.age}</div>
@@ -75,6 +80,11 @@ class MealPlannerForm extends Component {
     return (
       <>
         <div className="container wrapper">
+          <div className="text-center" style={{ padding: ".75rem 1.25rem" }}>
+            <h3>
+              <strong>My Info</strong>
+            </h3>
+          </div>
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
             <div className="row">
               <div className="col-4">{this.state.age}</div>

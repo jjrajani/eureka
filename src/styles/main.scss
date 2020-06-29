@@ -20,6 +20,7 @@
 
   $red: #c81246;
   $white: #ffffff;
+  $green: #8bbd44;
 
   input[type='number'],
   input[type='text'],
@@ -84,5 +85,44 @@
 
   .row {
     margin-bottom: 3%;
+  }
+
+  .text-notice {
+    color: $green;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  #react-results {
+    .row {
+      margin-bottom: 0px;
+
+      .h-100 {
+        height: calc(100% - 1rem) !important;
+      }
+
+      .card-body {
+        .card {
+          padding: .5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .react-meal-planner {
+    #react-results {
+      img {
+        max-width: 200px;
+      }
+
+
+      .card-body .col-sm-6:nth-child(odd) .card {
+        .row.no-gutters {
+          flex-direction: column-reverse;
+        }
+      }
+    }
   }
 }
