@@ -43,16 +43,10 @@ class EmailCollectionModal extends React.Component {
           </div>
         </div>
         <div className="modal-footer">
-          <button
-            className="btn btn-secondary"
-            onClick={this.props.skipSubscribe}
-            type="button"
-          >
+          <button onClick={this.props.skipSubscribe} type="button">
             No Thanks
           </button>
-          <button className="btn btn-primary" type="submit">
-            Get My Meal Planner
-          </button>
+          <button type="submit">Get My Meal Planner</button>
         </div>
       </form>
     );
