@@ -1,6 +1,11 @@
 .react-meal-planner {
+  $red: #c81246;
+  $white: #ffffff;
+  $green: #8bbd44;
+
   * {
     box-sizing: border-box;
+    font-family: 'Asap',Helvetica,Arial,Lucida,sans-serif;
   }
 
   body {
@@ -18,73 +23,14 @@
       monospace;
   }
 
-  $red: #c81246;
-  $white: #ffffff;
-  $green: #8bbd44;
-
-  input[type='number'],
-  input[type='text'],
-  select {
-    padding: 18px;
-    font-size: 16px;
-    border: solid 0px #bbb;
-    color: #999;
-    width: 100%;
-    background-color: rgba(132,111,100,0.1);
-    outline: none;
-
-    &:focus {
-      color: $red;
-      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $red;
-        opacity: 1; /* Firefox */
-      }
-    }
-  }
-
-  select {
-    position: relative;
-    appearance: none;
-
-    &:active {
-      &::after {
-        transform: none;
-      }
-    }
-  }
-
-  .select-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: #666;
-    margin-top: 3px;
-    pointer-events: none;
-  }
-
-  button {
-    color: $white;
-    background-color: $red;
-    border-radius: 7px;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 20px;
-    padding: .3em 1em;
-    border: 2px solid $red;
-    &:focus {
-      outline: none;
-    }
-  }
-
   .row {
     margin-bottom: 3%;
+  }
+
+  .flex.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .text-notice {
@@ -93,36 +39,14 @@
     font-weight: 600;
   }
 
-  #react-results {
-    .row {
-      margin-bottom: 0px;
-
-      .h-100 {
-        height: calc(100% - 1rem) !important;
-      }
-
-      .card-body {
-        .card {
-          padding: .5rem;
-        }
-      }
-    }
+  .spinner-border {
+    height: 5rem;
+    width: 5rem;
+    border-width: .5em;
   }
-}
 
-@media screen and (max-width: 992px) {
-  .react-meal-planner {
-    #react-results {
-      img {
-        max-width: 200px;
-      }
-
-
-      .card-body .col-sm-6:nth-child(odd) .card {
-        .row.no-gutters {
-          flex-direction: column-reverse;
-        }
-      }
-    }
+  .spinner-border.green {
+    border-color: $red;
+    border-right-color: transparent;
   }
 }

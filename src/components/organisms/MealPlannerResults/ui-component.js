@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import EmailCollectionForm from "../EmailCollectionForm";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
+import "./style.scss";
 const WaterImgSrc =
   "https://media.istockphoto.com/vectors/glass-of-water-flat-design-vector-id902228542?k=6&m=902228542&s=612x612&w=0&h=aYqztXu9diPizPQery3JtLsxLVjDMXzVY2hrsAM5lZo=";
 const BMIImgSrc =
@@ -77,6 +78,9 @@ class MealPlannerResults extends React.Component {
                   <div className="col-lg-6">
                     <div className="card mb-3 h-100">
                       <div className="row no-gutters">
+                        <div className="col-md-4 text-center">
+                          <img src={BMRImgSrc} className="card-img" alt="BMI" />
+                        </div>
                         <div className="col-md-8">
                           <div className="card-body">
                             <h5 className="card-title">BMR: {results.bmr}</h5>
@@ -85,9 +89,6 @@ class MealPlannerResults extends React.Component {
                               it is and what it is and what it is.
                             </p>
                           </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <img src={BMRImgSrc} className="card-img" alt="BMI" />
                         </div>
                       </div>
                     </div>
@@ -119,6 +120,13 @@ class MealPlannerResults extends React.Component {
                   <div className="col-lg-6">
                     <div className="card mb-3 h-100">
                       <div className="row no-gutters">
+                        <div className="col-md-4 text-center">
+                          <img
+                            src={WaterImgSrc}
+                            className="card-img"
+                            alt="BMI"
+                          />
+                        </div>
                         <div className="col-md-8">
                           <div className="card-body">
                             <h5 className="card-title">
@@ -132,13 +140,6 @@ class MealPlannerResults extends React.Component {
                               what it is and what it is and what it is.
                             </p>
                           </div>
-                        </div>
-                        <div className="col-md-4 text-center">
-                          <img
-                            src={WaterImgSrc}
-                            className="card-img"
-                            alt="BMI"
-                          />
                         </div>
                       </div>
                     </div>

@@ -1,15 +1,23 @@
-$red: #c81246;
-$white: #ffffff;
-$input-background-color: rgba(132,111,100,0.1);
-
 .react-meal-planner {
+  $input-color: #999;
+  $label-color: #666666;
+  $red: #c81246;
+  $white: #ffffff;
+  $input-background-color: rgba(132,111,100,0.1);
+
+  label {
+    margin-bottom: .25rem;
+    color: $label-color;
+    font-size: 16px;
+  }
+
   input[type='number'],
   input[type='text'],
   select {
-    padding: 16px;
-    font-size: 14px;
-    border: solid 1px transparent;
-    color: #999;
+    padding: 18px;
+    font-size: 16px;
+    border: solid 0px #bbb;
+    color: $input-color;
     width: 100%;
     background-color: $input-background-color;
     outline: none;
@@ -28,21 +36,31 @@ $input-background-color: rgba(132,111,100,0.1);
   }
 
   select {
-    position: relative;
+    appearance: none;
+
+    &:active {
+      &::after {
+        transform: none;
+      }
+    }
   }
 
-  select::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top-color: #666;
-    margin-top: 3px;
-    pointer-events: none;
+  .select-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 51%;
+      right: 25px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border: 7px solid transparent;
+      border-top-color: #666;
+      margin-top: 3px;
+      pointer-events: none;
+    }
   }
 
   button {

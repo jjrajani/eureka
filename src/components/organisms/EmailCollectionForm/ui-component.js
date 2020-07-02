@@ -80,7 +80,13 @@ class EmailCollectionModal extends React.Component {
   };
 
   loadingBody = () => {
-    return <div className="modal-body">Loading...</div>;
+    return (
+      <div className="flex center h-100">
+        <div className="spinner-border green" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
   };
 
   render() {
@@ -92,6 +98,7 @@ class EmailCollectionModal extends React.Component {
     const title = !didSubscribe
       ? "Lorem. Provide your email address get your personalized Meal Planner! Lorem."
       : "Lorem. Thank you for subscribing! Lorem.";
+
     return (
       <div
         className="modal fade"
@@ -103,20 +110,21 @@ class EmailCollectionModal extends React.Component {
         aria-labelledby={`${id}Label`}
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            {!loading && (
-              <div className="modal-header">
-                <h5 className="modal-title" id={`${id}Label`}>
-                  {title}
-                </h5>
-              </div>
-            )}
-            {!loading &&
-              (!didSubscribe ? this.formBody() : this.thankyouBody())}
-            {loading && this.loadingBody()}
+        {loading && this.loadingBody()}
+        {!loading && (
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              {!loading && (
+                <div className="modal-header">
+                  <h5 className="modal-title" id={`${id}Label`}>
+                    {title}
+                  </h5>
+                </div>
+              )}
+              {!didSubscribe ? this.formBody() : this.thankyouBody()}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }
@@ -141,6 +149,8 @@ EmailCollectionModal.propTypes = {
   didSubscribe: PropTypes.bool.isRequired,
   didDismiss: PropTypes.bool.isRequired,
   dismiss: PropTypes.func.isRequired,
+  submitFailed: PropTypes.bool.isRequired,
+  email: PropTypes.string,
 };
 
 export default EmailCollectionModal;
