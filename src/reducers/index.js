@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 import { reducer as form } from "redux-form";
+import appData from "./appData";
 import emailCollectionForm from "./emailCollectionForm";
 import mealPlanner from "./mealPlanner";
 import modal from "./modal";
 
 // combine to single object
 export const reducers = {
+  appData,
   emailCollectionForm,
   form,
   mealPlanner,

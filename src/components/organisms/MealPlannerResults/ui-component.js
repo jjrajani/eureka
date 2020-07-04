@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import EmailCollectionForm from "../EmailCollectionForm";
+import String from "../../atoms/String";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import "./style.scss";
 const WaterImgSrc =
@@ -41,7 +42,9 @@ class MealPlannerResults extends React.Component {
             <div className="card">
               <div className="card-header text-center">
                 <h3>
-                  <strong>My Numbers</strong>
+                  <strong>
+                    <String textKey="myNumbers.title" />
+                  </strong>
                 </h3>
               </div>
               <div className="card-body">
@@ -52,7 +55,7 @@ class MealPlannerResults extends React.Component {
                         /\B(?=(\d{3})+(?!\d))/g,
                         ","
                       )}{" "}
-                      Calories per day
+                      <String textKey="myNumbers.calories.text" />
                     </p>
                   </div>
 
@@ -64,10 +67,12 @@ class MealPlannerResults extends React.Component {
                         </div>
                         <div className="col-md-8">
                           <div className="card-body">
-                            <h5 className="card-title">BMI: {results.bmi}</h5>
+                            <h5 className="card-title">
+                              <String textKey="myNumbers.bmi.title" />:{" "}
+                              {results.bmi}
+                            </h5>
                             <p className="card-text">
-                              Lorem.. This is a bunch of info about BMI and what
-                              it is and what it is and what it is.
+                              <String textKey="myNumbers.bmi.body" />
                             </p>
                           </div>
                         </div>
@@ -83,10 +88,12 @@ class MealPlannerResults extends React.Component {
                         </div>
                         <div className="col-md-8">
                           <div className="card-body">
-                            <h5 className="card-title">BMR: {results.bmr}</h5>
+                            <h5 className="card-title">
+                              <String textKey="myNumbers.bmr.title" />:{" "}
+                              {results.bmr}
+                            </h5>
                             <p className="card-text">
-                              Lorem.. This is a bunch of info about BMR and what
-                              it is and what it is and what it is.
+                              <String textKey="myNumbers.bmr.body" />
                             </p>
                           </div>
                         </div>
@@ -106,10 +113,12 @@ class MealPlannerResults extends React.Component {
                         </div>
                         <div className="col-md-8">
                           <div className="card-body">
-                            <h5 className="card-title">Macro: 25/40/35</h5>
+                            <h5 className="card-title">
+                              <String textKey="myNumbers.macro.title" />:
+                              25/40/35
+                            </h5>
                             <p className="card-text">
-                              Lorem.. This is a bunch of info about Macros and
-                              what it is and what it is and what it is.
+                              <String textKey="myNumbers.macro.body" />
                             </p>
                           </div>
                         </div>
@@ -130,14 +139,14 @@ class MealPlannerResults extends React.Component {
                         <div className="col-md-8">
                           <div className="card-body">
                             <h5 className="card-title">
-                              Water: {results.handSizes.waterServing}{" "}
+                              <String textKey="myNumbers.water.title" />:{" "}
+                              {results.handSizes.waterServing}{" "}
                               <small className="text-muted">
-                                8oz glasses per day
+                                <String textKey="myNumbers.water.titleSmall" />
                               </small>
                             </h5>
                             <p className="card-text">
-                              Lorem.. This is a bunch of info about Water and
-                              what it is and what it is and what it is.
+                              <String textKey="myNumbers.water.body" />
                             </p>
                           </div>
                         </div>
@@ -153,7 +162,7 @@ class MealPlannerResults extends React.Component {
                           data-toggle="modal"
                           data-target="#email-collection"
                         >
-                          Download My Meal Plan
+                          <String textKey="downloadButtonText" />
                         </button>
                       )}
                       {didDismiss && (
@@ -161,7 +170,7 @@ class MealPlannerResults extends React.Component {
                           type="button"
                           onClick={downloadResults.bind(this, results)}
                         >
-                          Download My Meal Plan
+                          <String textKey="downloadButtonText" />
                         </button>
                       )}
                     </div>

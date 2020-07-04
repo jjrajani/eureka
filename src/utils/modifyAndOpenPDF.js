@@ -1,4 +1,3 @@
-import PDF from "../assets/meal_planner.pdf";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 const red = rgb(0.54, 0.1, 0.1);
 const green = rgb(0.5451, 0.74, 0.267);
@@ -147,8 +146,13 @@ const modifyWaterServingSizes = (pages, servingSize, font) => {
   }
 };
 
+const isDev = false;
+const url = isDev
+  ? "http://localhost:5000/my_meal_planner"
+  : "https://eureka-holistic-nutrition.herokuapp.com/my_meal_planner";
+
 const modifyAndOpenPDF = async (results) => {
-  const existingPdf = await fetch(PDF).then((res) => res.arrayBuffer());
+  const existingPdf = await fetch(url).then((res) => res.arrayBuffer());
   const pdfDoc = await PDFDocument.load(existingPdf);
   const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
   const pages = pdfDoc.getPages();

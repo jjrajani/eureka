@@ -12,7 +12,7 @@ const mifflinCalc = ({ age, gender, height, weight }) => {
 
   let BMR;
 
-  if (gender === "male") {
+  if (gender === "Male") {
     BMR = weight + height - age + 5;
   } else {
     BMR = weight + height - age - 161;

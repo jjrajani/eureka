@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ReduxField from "../../molecules/ReduxField";
 import INPUTS from "./inputs";
 import modifyAndOpenPDF from "../../../utils/modifyAndOpenPDF";
+import String from "../../atoms/String";
 
 class EmailCollectionModal extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class EmailCollectionModal extends React.Component {
   };
 
   submit = (vals) => {
-    this.props.onSubmit(vals, this.props.results);
+    this.props.onSubmit(vals, this.props.mealPlannerInput, this.props.results);
   };
 
   formBody = () => {
@@ -44,9 +45,11 @@ class EmailCollectionModal extends React.Component {
         </div>
         <div className="modal-footer">
           <button onClick={this.props.skipSubscribe} type="button">
-            No Thanks
+            <String textKey="emailCollectionForm.cancelButtonText" />
           </button>
-          <button type="submit">Get My Meal Planner</button>
+          <button type="submit">
+            <String textKey="emailCollectionForm.submitButtonText" />
+          </button>
         </div>
       </form>
     );
@@ -56,15 +59,7 @@ class EmailCollectionModal extends React.Component {
     return (
       <>
         <div className="modal-body">
-          Bacon ipsum dolor amet kielbasa sirloin ball tip, prosciutto bresaola
-          turducken porchetta drumstick strip steak shankle tenderloin. Strip
-          steak pork porchetta ribeye ground round cupim. Meatloaf spare ribs
-          tail pastrami, cow burgdoggen tri-tip andouille ball tip boudin jowl
-          kielbasa beef ribs landjaeger frankfurter. Cow chuck pork chop
-          andouille t-bone chislic tail cupim biltong tongue kevin. Corned beef
-          chicken boudin, ham short loin shoulder beef ribs ham hock. Swine pork
-          loin short ribs, strip steak t-bone porchetta pork chop tenderloin
-          venison cow.
+          <String textKey="emailThankyouModal.body" />
         </div>
         <div className="modal-footer">
           <button
@@ -72,7 +67,7 @@ class EmailCollectionModal extends React.Component {
             onClick={this.props.dismiss}
             type="button"
           >
-            Close
+            <String textKey="emailThankyouModal.closeButton" />
           </button>
         </div>
       </>
@@ -82,7 +77,7 @@ class EmailCollectionModal extends React.Component {
   loadingBody = () => {
     return (
       <div className="flex center h-100">
-        <div className="spinner-border green" role="status">
+        <div className="spinner-border red" role="status">
           <span className="sr-only">Loading...</span>
         </div>
       </div>
@@ -95,9 +90,9 @@ class EmailCollectionModal extends React.Component {
     }
     let id = "email-collection";
     const { loading, didSubscribe } = this.props;
-    const title = !didSubscribe
-      ? "Lorem. Provide your email address get your personalized Meal Planner! Lorem."
-      : "Lorem. Thank you for subscribing! Lorem.";
+    const titleKey = !didSubscribe
+      ? "emailCollectionForm.title"
+      : "emailThankyouModal.title";
 
     return (
       <div
@@ -117,7 +112,7 @@ class EmailCollectionModal extends React.Component {
               {!loading && (
                 <div className="modal-header">
                   <h5 className="modal-title" id={`${id}Label`}>
-                    {title}
+                    <String textKey={titleKey} />
                   </h5>
                 </div>
               )}
@@ -142,6 +137,7 @@ EmailCollectionModal.propTypes = {
       body: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     }),
   }),
+  mealPlannerInput: PropTypes.object.isRequired,
   results: PropTypes.object.isRequired,
   skipSubscribe: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
@@ -149,8 +145,6 @@ EmailCollectionModal.propTypes = {
   didSubscribe: PropTypes.bool.isRequired,
   didDismiss: PropTypes.bool.isRequired,
   dismiss: PropTypes.func.isRequired,
-  submitFailed: PropTypes.bool.isRequired,
-  email: PropTypes.string,
 };
 
 export default EmailCollectionModal;

@@ -7,6 +7,7 @@ const INPUTS = [
       labelId: "age-label",
       label: "Age",
       min: 0,
+      labelKey: "myInfo.inputs.age.label",
     },
     width: 3,
   },
@@ -17,17 +18,9 @@ const INPUTS = [
       id: "gender",
       labelId: "gender-label",
       label: "Gender",
+      labelKey: "myInfo.inputs.gender.label",
+      valueKey: "myInfo.inputs.gender.values",
     },
-    options: [
-      {
-        value: "male",
-        displayValue: "Male",
-      },
-      {
-        value: "female",
-        displayValue: "Female",
-      },
-    ],
     width: 3,
   },
   {
@@ -36,6 +29,7 @@ const INPUTS = [
       type: "number",
       id: "heightFt",
       label: "Height (ft)",
+      labelKey: "myInfo.inputs.height.feet.label",
       min: "0",
       max: "7",
     },
@@ -47,6 +41,7 @@ const INPUTS = [
       type: "number",
       id: "heightIn",
       label: "Height (in)",
+      labelKey: "myInfo.inputs.height.inches.label",
       min: "0",
       max: "11",
     },
@@ -58,6 +53,7 @@ const INPUTS = [
       type: "number",
       id: "weight",
       label: "Weight",
+      labelKey: "myInfo.inputs.weight.label",
       min: "0",
     },
     width: 12,
@@ -69,21 +65,9 @@ const INPUTS = [
       id: "activity",
       labelId: "activity-label",
       label: "Activity Level",
+      labelKey: "myInfo.inputs.activityLevel.label",
+      valueKey: "myInfo.inputs.activityLevel.values",
     },
-    options: [
-      {
-        value: "low",
-        displayValue: "Low",
-      },
-      {
-        value: "moderate",
-        displayValue: "Moderate",
-      },
-      {
-        value: "high",
-        displayValue: "High",
-      },
-    ],
     width: 3,
   },
   {
@@ -93,41 +77,9 @@ const INPUTS = [
       id: "diet",
       labelId: "diet-label",
       label: "Diet Preference",
+      labelKey: "myInfo.inputs.dietPreference.label",
+      valueKey: "myInfo.inputs.dietPreference.values",
     },
-    options: [
-      {
-        value: "vegetarian",
-        displayValue: "Vegetarian",
-      },
-      {
-        value: "vegan",
-        displayValue: "Vegan",
-      },
-      {
-        value: "pescatarian",
-        displayValue: "Pescatarian",
-      },
-      {
-        value: "keto",
-        displayValue: "Keto - High Fat",
-      },
-      {
-        value: "low-carb",
-        displayValue: "Low Carb",
-      },
-      {
-        value: "gluten-free",
-        displayValue: "Gluten Free",
-      },
-      {
-        value: "ethnic-specific",
-        displayValue: "Ethnic Specific",
-      },
-      {
-        value: "anything",
-        displayValue: "Anything",
-      },
-    ],
     width: 3,
   },
   {
@@ -137,21 +89,9 @@ const INPUTS = [
       id: "goal",
       labelId: "goal-label",
       label: "Goal",
+      labelKey: "myInfo.inputs.goal.label",
+      valueKey: "myInfo.inputs.goal.values",
     },
-    options: [
-      {
-        value: "weight-loss",
-        displayValue: "Weight Loss",
-      },
-      {
-        value: "improve-health",
-        displayValue: "Improve Health",
-      },
-      {
-        value: "body-recomp",
-        displayValue: "Body Recomposition",
-      },
-    ],
     width: 3,
   },
   {
@@ -161,6 +101,7 @@ const INPUTS = [
       id: "water",
       labelId: "water-label",
       label: "Water (8oz glasses)",
+      labelKey: "myInfo.inputs.water.label",
       min: "0",
     },
     width: 3,

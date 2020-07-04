@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import ReduxNumberField from "../../molecules/ReduxNumberField";
 import ReduxTextField from "../../molecules/ReduxTextField";
 import ReduxSelectField from "../../molecules/ReduxSelectField";
+import String from "../../atoms/String";
 import "./style.scss";
 import { Field } from "redux-form";
 
@@ -39,7 +40,14 @@ const renderField = ({ inputProps, mdProps, options }, field) => {
 
 const renderFields = (inputs) =>
   inputs.map((input) => {
-    return <ReduxField key={input.inputProps.name} input={input} />;
+    return (
+      <div key={input.inputProps.name}>
+        <label>
+          <String textKey={input.inputProps.labelKey} />
+        </label>
+        <ReduxField input={input} />
+      </div>
+    );
   });
 
 /**

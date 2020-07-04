@@ -15,17 +15,17 @@ const CalorieIntakeCalculator = ({
 
   let calorieIntake = bmr;
 
-  if (activity === "low") {
+  if (activity === "Low") {
     calorieIntake *= 1.375;
-  } else if (activity === "moderate") {
+  } else if (activity === "Moderate") {
     calorieIntake *= 1.55;
-  } else if (activity === "high") {
+  } else if (activity === "High") {
     calorieIntake *= 1.725;
   }
 
-  if (goal === "weight-loss") {
+  if (goal === "Weight Loss") {
     calorieIntake -= 500;
-  } else if (goal === "body-recomp") {
+  } else if (goal === "Body Recomposition") {
     calorieIntake -= 250;
   }
 

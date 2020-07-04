@@ -4,6 +4,7 @@ import MealPlannerResults from "../MealPlannerResults";
 import "./style.scss";
 import MY_INFO_INPUTS from "./my_info_inputs";
 import ReduxField from "../../molecules/ReduxField";
+import String from "../../atoms/String";
 
 /**
  * [MealPlannerForm description]
@@ -38,7 +39,9 @@ class MealPlannerForm extends Component {
         <div className="container wrapper">
           <div className="text-center">
             <h3>
-              <strong>My Info</strong>
+              <strong>
+                <String textKey="myInfo.title" />
+              </strong>
             </h3>
           </div>
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
@@ -82,7 +85,9 @@ class MealPlannerForm extends Component {
         <div className="container wrapper">
           <div className="text-center" style={{ padding: ".75rem 1.25rem" }}>
             <h3>
-              <strong>My Info</strong>
+              <strong>
+                <String textKey="myInfo.title" />
+              </strong>
             </h3>
           </div>
           <form onSubmit={this.props.handleSubmit(this.props.submit)}>
@@ -110,37 +115,6 @@ class MealPlannerForm extends Component {
       </>
     );
   };
-
-  // renderLV = () => {
-  //   const { didCompute } = this.props;
-  //   return (
-  //     <>
-  //       <div className="container wrapper">
-  //         <form onSubmit={this.props.handleSubmit(this.props.submit)}>
-  //           <div className="row">
-  //             <div className="col-4">{this.state.age}</div>
-  //             <div className="col-4">{this.state.gender}</div>
-  //             <div className="col-2">{this.state.heightFt}</div>
-  //             <div className="col-2">{this.state.heightIn}</div>
-  //           </div>
-  //           <div className="row">
-  //             <div className="col-6">{this.state.weight}</div>
-  //             <div className="col-6">{this.state.water}</div>
-  //           </div>
-  //           <div className="row">
-  //             <div className="col-4">{this.state.activity}</div>
-  //             <div className="col-4">{this.state.goal}</div>
-  //             <div className="col-4">{this.state.diet}</div>
-  //           </div>
-  //           <div className="row"></div>
-  //           <div className="row"></div>
-  //           <button type="submit">Submit</button>
-  //         </form>
-  //       </div>
-  //       {didCompute && <MealPlannerResults />}
-  //     </>
-  //   );
-  // };
 }
 
 MealPlannerForm.defaultProps = {};

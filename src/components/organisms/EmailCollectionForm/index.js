@@ -8,14 +8,15 @@ import {
 } from "../../../actions/email-collection-form";
 import validate from "./validate";
 
-const submit = (dispatch, vals, results) => {
-  dispatch(emailCollectionFormSubmit(vals, results));
+const submit = (dispatch, vals, mealPlannerInput, results) => {
+  dispatch(emailCollectionFormSubmit(vals, mealPlannerInput, results));
 };
 
 const mapStateToProps = (state) => {
   return {
     opts: state.modal.showId ? state.modal[state.modal.showId] : {},
     show: state.modal.show,
+    mealPlannerInput: state.form.mealPlanner.values,
     results: state.mealPlanner.results,
     loading: state.emailCollectionForm.loading,
     didSubscribe: state.emailCollectionForm.didSubscribe,
@@ -33,7 +34,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSubmit: (vals, results) => submit(dispatch, vals, results),
+    onSubmit: (vals, mealPlannerInput, results) =>
+      submit(dispatch, vals, mealPlannerInput, results),
     skipSubscribe: () => closeEmailCollectionModal(),
     dismiss: () => dispatch(dismissEmailCollectionForm()),
   };
