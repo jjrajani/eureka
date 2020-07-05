@@ -1,11 +1,6 @@
 import * as t from "./types";
 import modifyAndOpenPDF from "../../utils/modifyAndOpenPDF";
-import axios from "axios";
-
-const isDev = false;
-const url = isDev
-  ? "http://localhost:5000/meal_planner_user_data"
-  : "https://eureka-holistic-nutrition.herokuapp.com/meal_planner_user_data";
+import addUserData from "../../utils/GoogleSpreadSheet/userData";
 
 export const emailCollectionFormSubmit = (
   vals,
@@ -13,14 +8,24 @@ export const emailCollectionFormSubmit = (
   results
 ) => async (dispatch) => {
   dispatch({ type: t.EMAIL_COLLECTION_FORM_SUBMIT_START });
-  await axios.post(url, {
+  let didSubmit = await addUserData({
     First: vals.first,
     Last: vals.last,
     Email: vals.email,
     Age: mealPlannerInput.age,
   });
-  await modifyAndOpenPDF(results);
-  dispatch({ type: t.EMAIL_COLLECTION_SUCCESS });
+
+  if (didSubmit.status === 400) {
+    // error updating spreadsheet
+  } else if (didSubmit.status === 422) {
+    // missing data
+  } else if (didSubmit === "Success") {
+    // success
+    await modifyAndOpenPDF(results);
+    dispatch({ type: t.EMAIL_COLLECTION_SUCCESS });
+  } else {
+    // error
+  }
 };
 
 export const closeEmailCollectionModal = () => {
