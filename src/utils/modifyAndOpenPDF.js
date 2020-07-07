@@ -1,3 +1,4 @@
+import isMobile from "./isMobile";
 import PDF from "../assets/meal_planner.pdf";
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 const red = rgb(0.54, 0.1, 0.1);
@@ -177,8 +178,7 @@ const modifyAndOpenPDF = async (results) => {
   const file = new Blob([pdfBytes], { type: "application/pdf" });
   const fileUrl = URL.createObjectURL(file);
 
-  // window.open(fileUrl, "_blank");
-  downloadPDF(fileUrl);
+  isMobile() ? window.open(fileUrl, "_blank") : downloadPDF(fileUrl);
 };
 
 export default modifyAndOpenPDF;
