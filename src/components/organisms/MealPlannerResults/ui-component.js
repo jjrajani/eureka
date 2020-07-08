@@ -32,7 +32,8 @@ class MealPlannerResults extends React.Component {
   };
 
   render() {
-    const { didDismiss, downloadResults, results } = this.props;
+    const { didDismiss, downloadResults, results } = this.props,
+      macro = results.macro;
 
     return (
       <>
@@ -115,7 +116,7 @@ class MealPlannerResults extends React.Component {
                           <div className="card-body">
                             <h5 className="card-title">
                               <String textKey="myNumbers.macro.title" />:
-                              25/40/35
+                              {`${macro.protein}/${macro.carbs}/${macro.fats}`}
                             </h5>
                             <p className="card-text">
                               <String textKey="myNumbers.macro.body" />
