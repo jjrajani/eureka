@@ -1,11 +1,10 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const UserDataSheetId = "1Aub5KyDji9kfE9Ce0BYQ2kvefjFYnG8PIERV6KYuGuk";
 
 const addUserData = async (data) => {
   const { First, Last, Email, Age } = data;
   if (First && Last && Email && Age) {
     try {
-      const doc = new GoogleSpreadsheet(UserDataSheetId);
+      const doc = new GoogleSpreadsheet(process.env.REACT_APP_GS_USER_DATA_ID);
       await doc.useServiceAccountAuth({
         client_email: process.env.REACT_APP_GS_CLIENT_EMAIL,
         private_key: process.env.REACT_APP_GS_PRIVATE_KEY,

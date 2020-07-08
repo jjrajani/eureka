@@ -1,9 +1,8 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const AppDataSheetId = "1L2icpCDeauY9_eS2qKReucplYDEh_bedzDkW_K5sEDI";
 
 const getAppData = async () => {
   try {
-    const doc = new GoogleSpreadsheet(AppDataSheetId);
+    const doc = new GoogleSpreadsheet(process.env.REACT_APP_GS_APP_DATA_ID);
     await doc.useServiceAccountAuth({
       client_email: process.env.REACT_APP_GS_CLIENT_EMAIL,
       private_key: process.env.REACT_APP_GS_PRIVATE_KEY,
