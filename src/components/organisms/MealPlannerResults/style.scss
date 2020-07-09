@@ -1,3 +1,5 @@
+$red: #c81246;
+
 .react-meal-planner {
   #react-results {
     .row {
@@ -8,6 +10,10 @@
       }
 
       .card-body {
+        .card-title,
+        .card-text {
+          color: $red;
+        }
         .card {
           padding: .5rem;
         }
