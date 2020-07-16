@@ -7,7 +7,7 @@ const defaultData = {
       },
       gender: {
         label: "Gender",
-        values: ["Male", "Female"],
+        values: ["Female", "Male"],
       },
       height: {
         feet: {
@@ -31,14 +31,14 @@ const defaultData = {
       dietPreference: {
         label: "Diet Preference",
         values: [
-          "Vegetarian",
-          "Vegan",
-          "Pescatarian",
+          "Anything",
+          "Ethnic Specific",
+          "Gluten Free",
           "Keto - High Fat",
           "Low Carb",
-          "Gluten Free",
-          "Ethnic Specific",
-          "Anything",
+          "Pescatarian",
+          "Vegan",
+          "Vegetarian",
         ],
       },
       water: {

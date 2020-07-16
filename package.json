@@ -1,6 +1,6 @@
 {
   "name": "eureka-meal-planner",
-  "homepage": "http://localhost:3000/wp-content/meal_planner",
+  "homepage": "http://eurekaholisticnutrition.com/nutrition_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
