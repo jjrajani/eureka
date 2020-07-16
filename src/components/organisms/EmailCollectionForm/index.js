@@ -6,6 +6,7 @@ import {
   dismissEmailCollectionForm,
   emailCollectionFormSubmit,
 } from "../../../actions/email-collection-form";
+// import { showModal } from "../../../actions/modal";
 import validate from "./validate";
 
 const submit = (dispatch, vals, mealPlannerInput, results) => {
@@ -36,8 +37,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onSubmit: (vals, mealPlannerInput, results) =>
       submit(dispatch, vals, mealPlannerInput, results),
-    skipSubscribe: () => closeEmailCollectionModal(),
-    dismiss: () => dispatch(dismissEmailCollectionForm()),
+    skipSubscribe: () => {
+      dispatch(closeEmailCollectionModal());
+    },
+    dismiss: () => {
+      dispatch(dismissEmailCollectionForm());
+    },
   };
 };
 

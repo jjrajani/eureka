@@ -32,7 +32,12 @@ class MealPlannerResults extends React.Component {
   };
 
   render() {
-    const { didDismiss, downloadResults, results } = this.props,
+    const {
+        didDismiss,
+        downloadResults,
+        openEmailCollectionModal,
+        results,
+      } = this.props,
       macro = results.macro;
 
     return (
@@ -162,6 +167,7 @@ class MealPlannerResults extends React.Component {
                           type="button"
                           data-toggle="modal"
                           data-target="#email-collection"
+                          onClick={openEmailCollectionModal}
                         >
                           <String textKey="downloadButtonText" />
                         </button>
@@ -195,6 +201,7 @@ MealPlannerResults.propTypes = {
   initModal: PropTypes.func.isRequired,
   didDismiss: PropTypes.bool.isRequired,
   downloadResults: PropTypes.func.isRequired,
+  openEmailCollectionModal: PropTypes.func.isRequired,
   results: PropTypes.object,
 };
 

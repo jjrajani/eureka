@@ -1,6 +1,7 @@
 import * as t from "./types";
 import modifyAndOpenPDF from "../../utils/modifyAndOpenPDF";
 import addUserData from "../../utils/GoogleSpreadSheet/userData";
+import { showModal } from "../modal";
 
 export const emailCollectionFormSubmit = (
   vals,
@@ -28,11 +29,13 @@ export const emailCollectionFormSubmit = (
   }
 };
 
-export const closeEmailCollectionModal = () => {
+export const closeEmailCollectionModal = () => (dispatch) => {
   window.$("#email-collection").modal("toggle");
+  dispatch(showModal({ show: false, showId: "email-collection" }));
 };
 
 export const dismissEmailCollectionForm = () => (dispatch) => {
   closeEmailCollectionModal();
   dispatch({ type: t.COMPLETE_EMAIL_COLLECTION });
+  dispatch(showModal({ show: false, showId: "email-collection" }));
 };

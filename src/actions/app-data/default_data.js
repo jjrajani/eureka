@@ -1,5 +1,6 @@
 const defaultData = {
   myInfo: {
+    title: "My Info",
     inputs: {
       age: {
         label: "Age",
@@ -17,7 +18,7 @@ const defaultData = {
         },
       },
       weight: {
-        label: "Water (8oz glasses)",
+        label: "Weight",
       },
       activityLevel: {
         label: "Activity Level",

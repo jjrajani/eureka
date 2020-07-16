@@ -1,6 +1,6 @@
 {
   "name": "eureka-meal-planner",
-  "homepage": "https://eurekaholisticnutrition.com/wp-content/meal_planner",
+  "homepage": "http://localhost:3000/wp-content/meal_planner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

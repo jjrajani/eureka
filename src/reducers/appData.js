@@ -1,4 +1,5 @@
 import * as t from "../actions/app-data/types";
+import defaultData from "../actions/app-data/default_data";
 // import modifyAndOpenPDF from "../../../utils/modifyAndOpenPDF";
 
 /**
@@ -7,7 +8,9 @@ import * as t from "../actions/app-data/types";
  * @property {boolean} [loading=false]
  */
 const appDataInitialState = {
-  data: {},
+  data: {
+    myInfo: defaultData.myInfo,
+  },
   loading: false,
 };
 
@@ -24,7 +27,10 @@ export default (state = appDataInitialState, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: {
+          ...action.payload,
+          myInfo: state.data.myInfo,
+        },
       };
     }
 

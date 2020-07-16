@@ -7,26 +7,34 @@ import toggleBodyClass from "../utils/toggleBodyClass";
  * @property {boolean} [loading=false]
  */
 const modalInitialState = {
-  show: false,
-  showId: null,
+  showBackdrop: false,
 };
 
 // const modalItemInitialState = {
 //   id: "",
 //   show: false,
-//   uiOpts: {
-//     header: "",
-//     body: ""
-//   },
+//   [modalId]: {
+//     uiOpts: {
+//       header: "",
+//       body: ""
+//     },
+//   }
+// }
+
 // };
 
 export default (state = modalInitialState, action) => {
   switch (action.type) {
     case t.INIT_MODAL: {
+      if (action.payload.show === undefined) {
+        action.payload.show = false;
+      }
       return {
         ...state,
+        showBackdrop: action.payload.show,
         [action.payload.id]: {
           id: action.payload.id,
+          show: action.payload.show,
           uiOpts: {
             header: action.payload.uiOpts.header,
             body: action.payload.uiOpts.body,
@@ -37,10 +45,14 @@ export default (state = modalInitialState, action) => {
 
     case t.SHOW_MODAL: {
       toggleBodyClass("modal-open", action.payload.show);
+      console.log("action", action);
       return {
         ...state,
-        show: action.payload.show,
-        showId: action.payload.showId,
+        showBackdrop: action.payload.show,
+        [action.payload.showId]: {
+          ...state[action.payload.showId],
+          show: action.payload.show,
+        },
       };
     }
     default:

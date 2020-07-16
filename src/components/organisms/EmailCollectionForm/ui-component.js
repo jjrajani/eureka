@@ -98,7 +98,7 @@ class EmailCollectionModal extends React.Component {
       <div
         className="modal fade"
         id={id}
-        data-backdrop="static"
+        data-backdrop="false"
         data-keyboard="false"
         tabIndex="-1"
         role="dialog"

@@ -15,15 +15,15 @@ const submit = (dispatch, vals) => {
 const mapStateToProps = (state) => ({
   ...state.mealPlanner,
   initialValues: {
-    activity: "",
-    age: "",
-    diet: "",
-    gender: "",
-    goal: "",
-    heightFt: "",
-    heightIn: "",
-    water: "",
-    weight: "",
+    activity: "Low",
+    age: "34",
+    diet: "Anything",
+    gender: "Female",
+    goal: "Weight Loss",
+    heightFt: "5",
+    heightIn: "5",
+    water: "5",
+    weight: "150",
   },
 });
 
