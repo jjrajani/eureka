@@ -21,7 +21,7 @@ class EmailCollectionModal extends React.Component {
 
   componentDidMount = () => {
     if (this.props.didDismiss) {
-      modifyAndOpenPDF(this.props.results);
+      modifyAndOpenPDF(this.props.results, this.props.mealPlannerInput);
     }
   };
 

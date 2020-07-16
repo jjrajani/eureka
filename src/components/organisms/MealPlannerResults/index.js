@@ -4,6 +4,7 @@ import { initModal, showModal } from "../../../actions/modal";
 import modifyAndOpenPDF from "../../../utils/modifyAndOpenPDF";
 
 const mapStateToProps = (state) => ({
+  mealPlannerInput: state.form.mealPlanner.values,
   results: state.mealPlanner.results,
   didDismiss: state.emailCollectionForm.didDismiss,
 });
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
         uiOpts: uiOpts,
       })
     ),
-  downloadResults: async (results) => await modifyAndOpenPDF(results),
+  downloadResults: async (results, info) =>
+    await modifyAndOpenPDF(results, info),
   openEmailCollectionModal: () =>
     dispatch(showModal({ show: true, showId: "email-collection" })),
 });

@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pdf-lib/fontkit": "^1.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -28,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "startwp": "react-app-rewired start",
+    "startwp": "NODE_ENV=development react-app-rewired start",
     "buildwp": "react-app-rewired build",
     "testwp": "react-app-rewired test"
   },

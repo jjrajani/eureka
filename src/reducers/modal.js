@@ -45,7 +45,6 @@ export default (state = modalInitialState, action) => {
 
     case t.SHOW_MODAL: {
       toggleBodyClass("modal-open", action.payload.show);
-      console.log("action", action);
       return {
         ...state,
         showBackdrop: action.payload.show,

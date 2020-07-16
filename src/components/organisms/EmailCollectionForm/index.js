@@ -8,10 +8,15 @@ import {
 } from "../../../actions/email-collection-form";
 // import { showModal } from "../../../actions/modal";
 import validate from "./validate";
+import isNodeEnv from "../../../utils/isNodeEnv";
 
 const submit = (dispatch, vals, mealPlannerInput, results) => {
   dispatch(emailCollectionFormSubmit(vals, mealPlannerInput, results));
 };
+
+const initialValues = isNodeEnv("development")
+  ? { first: "asdf", last: "asdf", email: "fdassdf@asdf.com" }
+  : { first: "", last: "", email: "" };
 
 const mapStateToProps = (state) => {
   return {
@@ -22,14 +27,7 @@ const mapStateToProps = (state) => {
     loading: state.emailCollectionForm.loading,
     didSubscribe: state.emailCollectionForm.didSubscribe,
     didDismiss: state.emailCollectionForm.didDismiss,
-    initialValues: {
-      // first: "asdf",
-      // last: "asdf",
-      // email: "fdassdf@asdf.com",
-      first: "",
-      last: "",
-      email: "",
-    },
+    initialValues,
   };
 };
 

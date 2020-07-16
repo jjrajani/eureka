@@ -6,25 +6,40 @@ import withSizes from "react-sizes";
 import { isSV, isLV } from "../../../utils/window/sizes";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import validate from "./validate";
+import isNodeEnv from "../../../utils/isNodeEnv";
 
 const submit = (dispatch, vals) => {
   dispatch(calculateResults(vals));
   scrollResultsIntoView();
 };
 
+const initialValues = isNodeEnv("development")
+  ? {
+      activity: "High",
+      age: "34",
+      diet: "Ethnic Specific",
+      gender: "Female",
+      goal: "Body Recomposition",
+      heightFt: "5",
+      heightIn: "5",
+      water: "12",
+      weight: "90",
+    }
+  : {
+      activity: "",
+      age: "",
+      diet: "",
+      gender: "",
+      goal: "",
+      heightFt: "",
+      heightIn: "",
+      water: "",
+      weight: "",
+    };
+
 const mapStateToProps = (state) => ({
   ...state.mealPlanner,
-  initialValues: {
-    activity: "Low",
-    age: "34",
-    diet: "Anything",
-    gender: "Female",
-    goal: "Weight Loss",
-    heightFt: "5",
-    heightIn: "5",
-    water: "5",
-    weight: "150",
-  },
+  initialValues,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -4,6 +4,7 @@ import EmailCollectionForm from "../EmailCollectionForm";
 import String from "../../atoms/String";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import "./style.scss";
+import addCommasToNumber from "../../../utils/addCommasToNumber";
 const WaterImgSrc =
   "https://media.istockphoto.com/vectors/glass-of-water-flat-design-vector-id902228542?k=6&m=902228542&s=612x612&w=0&h=aYqztXu9diPizPQery3JtLsxLVjDMXzVY2hrsAM5lZo=";
 const BMIImgSrc =
@@ -35,6 +36,7 @@ class MealPlannerResults extends React.Component {
     const {
         didDismiss,
         downloadResults,
+        mealPlannerInput,
         openEmailCollectionModal,
         results,
       } = this.props,
@@ -57,10 +59,7 @@ class MealPlannerResults extends React.Component {
                 <div className="row justify-content-sm-center">
                   <div className="col-sm-12 text-center">
                     <p className="text-notice">
-                      {results.calorieIntake.replace(
-                        /\B(?=(\d{3})+(?!\d))/g,
-                        ","
-                      )}{" "}
+                      {addCommasToNumber(results.calorieIntake)}{" "}
                       <String textKey="myNumbers.calories.text" />
                     </p>
                   </div>
@@ -175,7 +174,11 @@ class MealPlannerResults extends React.Component {
                       {didDismiss && (
                         <button
                           type="button"
-                          onClick={downloadResults.bind(this, results)}
+                          onClick={downloadResults.bind(
+                            this,
+                            results,
+                            mealPlannerInput
+                          )}
                         >
                           <String textKey="downloadButtonText" />
                         </button>
@@ -202,6 +205,7 @@ MealPlannerResults.propTypes = {
   didDismiss: PropTypes.bool.isRequired,
   downloadResults: PropTypes.func.isRequired,
   openEmailCollectionModal: PropTypes.func.isRequired,
+  mealPlannerInput: PropTypes.object.isRequired,
   results: PropTypes.object,
 };
 

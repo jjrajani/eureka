@@ -22,7 +22,7 @@ export const emailCollectionFormSubmit = (
     // missing data
   } else if (didSubmit === "Success") {
     // success
-    await modifyAndOpenPDF(results);
+    await modifyAndOpenPDF(results, mealPlannerInput);
     dispatch({ type: t.EMAIL_COLLECTION_SUCCESS });
   } else {
     // error
