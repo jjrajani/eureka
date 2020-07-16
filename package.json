@@ -1,5 +1,6 @@
 {
   "name": "eureka-meal-planner",
+  "homepage": "https://eurekaholisticnutrition.com/wp-content/meal_planner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,7 +27,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "startwp": "react-app-rewired start",
+    "buildwp": "react-app-rewired build",
+    "testwp": "react-app-rewired test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,6 +54,7 @@
     "gulp-inline-source": "^4.0.0",
     "gulp-replace": "^1.0.0",
     "prettier": "2.0.5",
+    "react-app-rewired": "^2.1.6",
     "redux-devtools-extension": "^2.13.8",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack-cli": "^3.3.12"
