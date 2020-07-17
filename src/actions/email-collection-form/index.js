@@ -8,7 +8,6 @@ export const emailCollectionFormSubmit = (
   mealPlannerInput,
   results
 ) => async (dispatch) => {
-  dispatch({ type: t.EMAIL_COLLECTION_FORM_SUBMIT_START });
   let didSubmit = await addUserData({
     First: vals.first,
     Last: vals.last,

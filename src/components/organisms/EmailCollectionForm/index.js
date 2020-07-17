@@ -6,11 +6,12 @@ import {
   dismissEmailCollectionForm,
   emailCollectionFormSubmit,
 } from "../../../actions/email-collection-form";
-// import { showModal } from "../../../actions/modal";
 import validate from "./validate";
 import isNodeEnv from "../../../utils/isNodeEnv";
+import scrollToFirstError from "../../../utils/scrollToFirstError";
 
 const submit = (dispatch, vals, mealPlannerInput, results) => {
+  dispatch({ type: "EMAIL_COLLECTION_FORM_SUBMIT_START" });
   dispatch(emailCollectionFormSubmit(vals, mealPlannerInput, results));
 };
 
@@ -51,6 +52,7 @@ export default connect(
   reduxForm({
     form: "emailCollection",
     validate,
+    onSubmitFail: (errors) => scrollToFirstError(errors),
     // validate,
   })(EmailCollectionModal)
 );

@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
   mealPlannerInput: state.form.mealPlanner.values,
   results: state.mealPlanner.results,
   didDismiss: state.emailCollectionForm.didDismiss,
+  loading: state.mealPlanner.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({

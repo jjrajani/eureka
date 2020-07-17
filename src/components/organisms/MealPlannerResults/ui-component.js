@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import EmailCollectionForm from "../EmailCollectionForm";
 import String from "../../atoms/String";
+import MacroPieCart from "../../molecules/MacroPieChart";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import "./style.scss";
 import addCommasToNumber from "../../../utils/addCommasToNumber";
@@ -110,16 +111,35 @@ class MealPlannerResults extends React.Component {
                     <div className="card mb-3 h-100">
                       <div className="row no-gutters">
                         <div className="col-md-4 text-center">
-                          <img
-                            src={MacroImgSrc}
-                            className="card-img"
-                            alt="BMI"
-                          />
+                          {!this.props.loading && (
+                            <MacroPieCart
+                              data={[
+                                {
+                                  title: "Protien",
+                                  label: () => "Protien",
+                                  value: macro.protein,
+                                  color: "#c81246",
+                                },
+                                {
+                                  title: "Carbs",
+                                  label: () => "Carbs",
+                                  value: macro.carbs,
+                                  color: "#8bbd44",
+                                },
+                                {
+                                  title: "Fats",
+                                  label: () => "Fats",
+                                  value: macro.fats,
+                                  color: "#f9b938",
+                                },
+                              ]}
+                            />
+                          )}
                         </div>
                         <div className="col-md-8">
                           <div className="card-body">
                             <h5 className="card-title">
-                              <String textKey="myNumbers.macro.title" />:
+                              <String textKey="myNumbers.macro.title" />:{" "}
                               {`${macro.protein}/${macro.carbs}/${macro.fats}`}
                             </h5>
                             <p className="card-text">

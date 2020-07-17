@@ -1,8 +1,5 @@
 const validate = (vals) => {
   let errors = {};
-  if (!vals.email) {
-    errors.email = "Required";
-  }
 
   if (!vals.first) {
     errors.first = "Required";
@@ -10,6 +7,10 @@ const validate = (vals) => {
 
   if (!vals.last) {
     errors.last = "Required";
+  }
+
+  if (!vals.email) {
+    errors.email = "Required";
   }
 
   return errors;

@@ -2,7 +2,10 @@ import * as t from "./types";
 
 export const calculateResults = (vals) => (dispatch) => {
   dispatch({ type: t.CALCULATE_RESULTS_START });
-  dispatch({ type: t.CALCULATE_RESULTS_SUCCESS, payload: vals });
+  setTimeout(() => {
+    // set timeout to give chart time to unmount and rerender
+    dispatch({ type: t.CALCULATE_RESULTS_SUCCESS, payload: vals });
+  }, 10);
 };
 
 export const modifyAndOpenPDF = (dispatch) => {

@@ -7,6 +7,7 @@ import { isSV, isLV } from "../../../utils/window/sizes";
 import scrollResultsIntoView from "../../../utils/scrollResultsIntoView";
 import validate from "./validate";
 import isNodeEnv from "../../../utils/isNodeEnv";
+import scrollToFirstError from "../../../utils/scrollToFirstError";
 
 const submit = (dispatch, vals) => {
   dispatch(calculateResults(vals));
@@ -59,6 +60,7 @@ export default connect(
     reduxForm({
       form: "mealPlanner",
       validate,
+      onSubmitFail: (errors) => scrollToFirstError(errors),
       // validate,
     })(MealPlannerForm)
   )
