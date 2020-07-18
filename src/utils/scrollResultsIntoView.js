@@ -1,7 +1,15 @@
 const scrollResultsIntoView = () => {
   let results = document.getElementById("react-results");
+
   if (results) {
-    results.scrollIntoView({ behavior: "smooth" });
+    var bodyRect = document.body.getBoundingClientRect(),
+      elemRect = results.getBoundingClientRect(),
+      resultsOffset = elemRect.top - bodyRect.top;
+
+    window.scroll({
+      top: resultsOffset,
+      behavior: "smooth",
+    });
   }
 };
 

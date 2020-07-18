@@ -15,7 +15,6 @@ class MacroPieCart extends React.Component {
     };
   }
   componentDidMount = () => {
-    console.log("mount");
     let els = document.getElementsByTagName("text");
 
     for (let i = 0; i < 3; i++) {
