@@ -28,4 +28,5 @@ credentials.js
 .env.development
 
 prod-html.html
+wp-prod-html.html
 dev-html.html

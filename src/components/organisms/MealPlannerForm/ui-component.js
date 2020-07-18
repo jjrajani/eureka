@@ -36,7 +36,7 @@ class MealPlannerForm extends Component {
     const { didCompute } = this.props;
     return (
       <>
-        <div className="container rmp-wrapper">
+        <div className="rmp-container rmp-wrapper">
           <div className="text-center">
             <h3>
               <strong>
@@ -82,7 +82,7 @@ class MealPlannerForm extends Component {
     const { didCompute } = this.props;
     return (
       <>
-        <div className="container rmp-wrapper">
+        <div className="rmp-container rmp-wrapper">
           <div className="text-center" style={{ padding: ".75rem 1.25rem" }}>
             <h3>
               <strong>

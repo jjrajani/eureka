@@ -40,7 +40,7 @@ class MealPlannerResults extends React.Component {
     return (
       <>
         <EmailCollectionForm />
-        <div id="react-results" className="container rmp-wrapper">
+        <div id="react-results" className="rmp-container rmp-wrapper">
           <div className="row justify-content-sm-center">
             <div className="card">
               <div className="card-header text-center">
