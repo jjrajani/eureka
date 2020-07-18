@@ -4,32 +4,33 @@ import addCommasToNumber from "../../addCommasToNumber";
 const color = red;
 const y = 204;
 
-const modifyMyNumbers = (page, results, font) => {
+const texts = (results) => [
   // Calories
-  page.drawText(`${addCommasToNumber(results.calorieIntake)}`, {
+  {
+    text: `${addCommasToNumber(results.calorieIntake)}`,
     x: 153,
-    y,
-    size: 18,
-    font: font.bold,
-    color,
-  });
-
+  },
   // BMI
-  page.drawText(`${results.bmi}`, {
+  {
+    text: `${results.bmi}`,
     x: 406.5,
-    y,
-    size: 18,
-    font: font.bold,
-    color,
-  });
-
+  },
   // BMR
-  page.drawText(`${results.bmr}`, {
+  {
+    text: `${results.bmr}`,
     x: 658,
-    y,
-    size: 18,
-    font: font.bold,
-    color,
+  },
+];
+
+const modifyMyNumbers = (page, results, font) => {
+  texts(results).forEach((text) => {
+    page.drawText(text.text, {
+      x: text.x,
+      y,
+      size: 18,
+      font: font.bold,
+      color,
+    });
   });
 };
 

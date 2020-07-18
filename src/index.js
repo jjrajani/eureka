@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/main.scss";
 import "./utils/styles/conic-gradient/prefix-free.js";
 import "./utils/styles/conic-gradient";
-import App from "./components/ecosystems/App";
+import App from "./components/environments/App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { STORE } from "./store";

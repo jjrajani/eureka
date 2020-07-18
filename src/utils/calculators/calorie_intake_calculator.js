@@ -1,4 +1,4 @@
-import BMRCalculator from "./bmr_calculator";
+import { BMRCalculator } from "./";
 
 const CalorieIntakeCalculator = ({
   activity,

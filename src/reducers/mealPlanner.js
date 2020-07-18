@@ -1,9 +1,11 @@
 import * as t from "../actions/meal-planner/types";
-import BMICalculator from "../utils/bmi_calculator";
-import BMRCalculator from "../utils/bmr_calculator";
-import CalorieIntakeCalculator from "../utils/calorie_intake_calculator";
-import MacroRatioCalculator from "../utils/macro_ratio_calculator";
-import HandServingSizeCalculator from "../utils/hand_serving_size_calculator";
+import {
+  BMICalculator,
+  BMRCalculator,
+  CalorieIntakeCalculator,
+  HandServingSizeCalculator,
+  MacroRatioCalculator,
+} from "../utils/calculators";
 
 /**
  * Redux_MealPlannerState

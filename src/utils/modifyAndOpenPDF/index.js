@@ -1,6 +1,5 @@
 import isMobile from "../isMobile";
 import PDF from "../../assets/meal_planner.pdf";
-import ASAPFontRegular from "../../assets/Asap-Regular.ttf";
 import ASAPFontBold from "../../assets/Asap-Bold.ttf";
 import { PDFDocument } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
@@ -16,9 +15,6 @@ import modifyMyMealPlan from "./modifyMyMealPlan";
 import downloadPDF from "./downloadPDF";
 
 const modifyAndOpenPDF = async (results, userInput) => {
-  // const asapRegFontBytes = await fetch(ASAPFontRegular).then((res) =>
-  //   res.arrayBuffer()
-  // );
   const asapBoldFontBytes = await fetch(ASAPFontBold).then((res) =>
     res.arrayBuffer()
   );
