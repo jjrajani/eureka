@@ -1,10 +1,6 @@
-.react-meal-planner {
-  $input-color: #999;
-  $label-color: #666666;
-  $red: #c81246;
-  $white: #ffffff;
-  $input-background-color: rgba(132,111,100,0.1);
+@import '../../../styles/colors';
 
+.react-meal-planner {
   label {
     margin-bottom: .25rem;
     color: $label-color;

@@ -1,12 +1,21 @@
+@import './colors';
+
 #react-eureka {
-  $red: #c81246;
-  $white: #ffffff;
-  $green: #8bbd44;
   height: 100%;
 
   * {
     box-sizing: border-box;
     font-family: 'Asap',Helvetica,Arial,Lucida,sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .modal-body {
+    color: $taupe;
   }
 
   .row {
