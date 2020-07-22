@@ -10,13 +10,11 @@ const scrollResultsIntoView = () => {
     if (wpTopHeader && wpMainHeader && window.innerWidth > 980) {
       resultsOffset -= wpTopHeader.clientHeight + wpMainHeader.clientHeight;
     }
-    console.log("resultsOffset", resultsOffset);
 
     window.scroll({
       top: resultsOffset,
       behavior: "smooth",
     });
-    // results.scrollIntoView({ behavior: "smooth" });
   }
 };
 

@@ -45,9 +45,13 @@ const WaterServingCalculator = (weight) => {
   if (waterIntake > 100) {
     waterIntake = 100;
   }
-  let glassesPerDay = waterIntake / 8;
+  let glassesPerDay = Math.round(waterIntake / 8);
 
-  return Math.round(glassesPerDay);
+  if (glassesPerDay > 12) {
+    return 12;
+  } else {
+    return glassesPerDay;
+  }
 };
 
 const HandServingSizeCalculator = ({ calorieIntake, macro, weight }) => {

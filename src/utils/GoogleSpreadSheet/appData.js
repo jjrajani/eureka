@@ -103,6 +103,7 @@ const getAppData = async () => {
       emailThankyouModal: {
         title: rows[0]["Email Collection Thank You Modal Title"],
         body: rows[0]["Email Collection Thank You Modal Body"],
+        disclaimer: rows[0]["Email Collection Thank You Modal Disclaimer"],
         closeButton:
           rows[0]["Email Collection Thank You Modal Close Button Text"],
       },

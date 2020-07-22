@@ -60,6 +60,14 @@ class EmailCollectionModal extends React.Component {
       <>
         <div className="modal-body">
           <String textKey="emailThankyouModal.body" />
+          <p className="mt-4">
+            <small>
+              <String
+                className="small"
+                textKey="emailThankyouModal.disclaimer"
+              />
+            </small>
+          </p>
         </div>
         <div className="modal-footer">
           <button
@@ -90,6 +98,7 @@ class EmailCollectionModal extends React.Component {
     }
     let id = "email-collection";
     const { loading, didSubscribe } = this.props;
+    console.log("loading", loading);
     const titleKey = !didSubscribe
       ? "emailCollectionForm.title"
       : "emailThankyouModal.title";

@@ -7,12 +7,12 @@ const color = red,
 const texts = (results) => [
   {
     // Proteins - serving size
-    x: 41.5,
+    x: `${results.handSizes.proteinServing.palms}`.length === 1 ? 41.5 : 35.5,
     value: results.handSizes.proteinServing.palms,
   },
   {
     // Proteins - grams
-    x: 138,
+    x: `${results.handSizes.proteinServing.grams}`.length === 1 ? 138 : 130,
     value: `${results.handSizes.proteinServing.grams}g`,
   },
   {
@@ -24,7 +24,7 @@ const texts = (results) => [
   },
   {
     // Fats - serving size
-    x: 227.75,
+    x: `${results.handSizes.fatServing.palms}`.length === 1 ? 227.75 : 220,
     value: results.handSizes.fatServing.palms,
   },
   {
@@ -41,7 +41,7 @@ const texts = (results) => [
   },
   {
     // Carbs - serving size
-    x: 414,
+    x: `${results.handSizes.carbsServing.palms}`.length === 1 ? 414 : 406,
     value: results.handSizes.carbsServing.palms,
   },
   {
@@ -58,7 +58,7 @@ const texts = (results) => [
   },
   {
     // Water
-    x: results.handSizes.waterServing.length === 2 ? 662 : 667,
+    x: results.handSizes.waterServing.length === 2 ? 645 : 667,
     value: results.handSizes.waterServing,
   },
 ];

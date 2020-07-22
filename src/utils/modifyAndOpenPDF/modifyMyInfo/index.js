@@ -88,7 +88,7 @@ const texts = (info) => [
   // Water
   {
     text: info.water,
-    x: () => (`${info.water}`.length === 1 ? 600.75 : 595.75),
+    x: () => (`${info.water}`.length === 1 ? 550.75 : 545.75),
     y: fourthRowY,
   },
 ];
