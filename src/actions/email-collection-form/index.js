@@ -14,6 +14,14 @@ export const emailCollectionFormSubmit = (
     Last: vals.last,
     Email: vals.email,
     Age: mealPlannerInput.age,
+    Gender: mealPlannerInput.gender,
+    Weight: mealPlannerInput.weight,
+    heightFt: mealPlannerInput.heightFt,
+    heightIn: mealPlannerInput.heightIn,
+    Water: mealPlannerInput.water,
+    Activity: mealPlannerInput.activity,
+    Goal: mealPlannerInput.goal,
+    Diet: mealPlannerInput.diet,
   });
 
   await mailChimpSubscribe({
