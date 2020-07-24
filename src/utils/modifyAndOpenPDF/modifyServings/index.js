@@ -12,7 +12,7 @@ const modifyServings = (
   listPos,
   color
 ) => {
-  pages[0].drawText("" + servingSize, {
+  pages[1].drawText("" + servingSize, {
     ...trackerPos,
     size: 11,
     font: font.bold,

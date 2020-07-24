@@ -2,9 +2,9 @@ import generateCheckBoxes from "../generateCheckBoxes";
 import modifyServings from "./";
 import { red } from "../colors";
 
-const protienTrackerCountPos = { x: 195, y: 307 },
-  protienFoodListCountPos = { x: 75, y: 330 },
-  listPage = 1;
+const protienTrackerCountPos = { x: 195, y: 304 },
+  protienFoodListCountPos = { x: 73, y: 330 },
+  listPage = 2;
 
 const modifyProtein = (pages, servingSize, font) => {
   modifyServings(
@@ -16,7 +16,7 @@ const modifyProtein = (pages, servingSize, font) => {
     protienFoodListCountPos,
     red
   );
-  generateCheckBoxes(120, 284, red, servingSize, pages[0]);
+  generateCheckBoxes(120, 284, red, servingSize, pages[1]);
 };
 
 export default modifyProtein;

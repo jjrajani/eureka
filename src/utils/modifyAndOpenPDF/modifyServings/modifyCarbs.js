@@ -2,9 +2,9 @@ import generateCheckBoxes from "../generateCheckBoxes";
 import modifyServings from "./";
 import { green } from "../colors";
 
-const carbsTrackerCountPos = { x: 360, y: 307 };
-const carbsFoodListCountPos = { x: 75, y: 65 };
-const listPage = 1;
+const carbsTrackerCountPos = { x: 360, y: 304 };
+const carbsFoodListCountPos = { x: 73, y: 65 };
+const listPage = 2;
 
 const modifyCarbs = (pages, servingSize, font) => {
   modifyServings(
@@ -16,7 +16,7 @@ const modifyCarbs = (pages, servingSize, font) => {
     carbsFoodListCountPos,
     green
   );
-  generateCheckBoxes(284.5, 284, green, servingSize, pages[0]);
+  generateCheckBoxes(284.5, 284, green, servingSize, pages[1]);
 };
 
 export default modifyCarbs;

@@ -44,13 +44,13 @@ const modifyAndOpenPDF = async (results, userInput) => {
   modifyWater(pages, results.handSizes.waterServing, font);
 
   // myInfo
-  modifyMyInfo(pages[3], userInput, font);
+  modifyMyInfo(pages[0], userInput, font);
 
   // myNumbers
-  modifyMyNumbers(pages[3], results, font);
+  modifyMyNumbers(pages[0], results, font);
 
   // myMealPlan
-  modifyMyMealPlan(pages[3], results, font);
+  modifyMyMealPlan(pages[0], results, font);
 
   const pdfBytes = await pdfDoc.save();
   const file = new Blob([pdfBytes], { type: "application/pdf" });

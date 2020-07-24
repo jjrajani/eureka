@@ -2,9 +2,9 @@ import generateCheckBoxes from "../generateCheckBoxes";
 import modifyServings from "./";
 import { blue } from "../colors";
 
-const waterTrackerCountPos = { x: 685, y: 307 },
-  waterFoodListCountPos = { x: 75, y: 65 },
-  listPage = 2;
+const waterTrackerCountPos = { x: 685, y: 304 },
+  waterFoodListCountPos = { x: 72, y: 72 },
+  listPage = 3;
 
 const modifyWater = (pages, servingSize, font) => {
   modifyServings(
@@ -17,7 +17,7 @@ const modifyWater = (pages, servingSize, font) => {
     blue
   );
 
-  generateCheckBoxes(613.5, 284, blue, servingSize, pages[0]);
+  generateCheckBoxes(613.5, 284, blue, servingSize, pages[1]);
 };
 
 export default modifyWater;
